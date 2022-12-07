@@ -28,22 +28,20 @@ struct InteractiveZoomContainer<Content: View>: View {
       content
 
       Color.black.opacity(min((zoomScale - 1) * 0.5, 0.5))
-        .ignoresSafeArea()
         .allowsHitTesting(false)
 
       overlayView?
         .opacity(zooming ? 1 : 0)
-      // TODO: 微妙に元のViewと位置がずれてしまう(12ずれてるっぽい)
-        .offset(
-          x: offset.width/2 + originalFrame.midX - UIScreen.main.bounds.width/2,
-          y: offset.height/2 + originalFrame.midY - UIScreen.main.bounds.height/2 - 12
-        )
         .scaleEffect(zoomScale)
+        .offset(
+          x: offset.width + originalFrame.midX - UIScreen.main.bounds.width/2,
+          y: offset.height + originalFrame.midY - UIScreen.main.bounds.height/2
+        )
         .animation(pinching ? nil : .spring(), value: zoomScale)
         .animation(pinching ? nil : .spring(), value: offset)
-        .ignoresSafeArea()
         .allowsHitTesting(false)
     }
+    .ignoresSafeArea()
     .onPreferenceChange(OffsetPreferenceKey.self) { value in
       print("ofset:", value ?? .zero)
       offset = value ?? .zero
@@ -78,24 +76,18 @@ extension View {
     }
   }
 }
+
 struct PinchZoomContext<Content: View>: View {
 
   private let content: Content
 
   @State private var originalFrame: CGRect = .zero
-
   @State private var localOffset: CGPoint = .zero
-
   @State private var scale: CGFloat = 1
-
-  @State private var scalePosition: CGPoint = .zero
   @State private var isPinching: Bool = false
-
   @State private var show: Bool = false
-
-  @State var overlayView: EquatableViewContainer? = nil
-
-  @State var opacity: CGFloat = 1
+  @State private var overlayView: EquatableViewContainer? = nil
+  @State private var opacity: CGFloat = 1
 
   init(@ViewBuilder content: () -> Content) {
     self.content = content()
@@ -104,7 +96,7 @@ struct PinchZoomContext<Content: View>: View {
   var body: some View {
     content
       .overlay(
-        ZoomGestureView(scale: $scale, offset: $localOffset, scalePosition: $scalePosition, isPinching: $isPinching)
+        ZoomGestureView(scale: $scale, offset: $localOffset, isPinching: $isPinching)
       )
     // overlayとbackgroundの組み合わせでgeometryreaderが動かないケースがあるみたい
       .overlay(GeometryReader { proxy in
@@ -114,8 +106,6 @@ struct PinchZoomContext<Content: View>: View {
       .opacity(opacity)
     // ちらつきを防止するためにdelayを入れている
       .animation(opacity > 0 ? nil : .default.delay(0.1), value: opacity)
-      .animation(isPinching ? nil : .spring(), value: scale)
-      .animation(isPinching ? nil : .spring(), value: localOffset)
     // scaleのアニメーションの終了を取得して、全画面の表示の終了を判断
       .modifier(AnimatableModifierDouble(bindedValue: scale, completion: {
         show = (scale > 1) || isPinching
@@ -125,6 +115,8 @@ struct PinchZoomContext<Content: View>: View {
         guard show == false else { return }
         show = (newValue > 1) || isPinching
       })
+    // TODO: 元に戻るためのアニメーションのCompletionを取得するためにscaleのanimationをInteractiveZoomContainerとは別で管理しているのが良くない
+      .animation(.spring(), value: scale)
       .onChange(of: show, perform: { newValue in
         overlayView = newValue ? .init(view: AnyView(content)) : nil
         opacity = newValue ? 0 : 1
@@ -141,7 +133,6 @@ struct ZoomGestureView: UIViewRepresentable {
 
   @Binding var scale: CGFloat
   @Binding var offset: CGPoint
-  @Binding var scalePosition: CGPoint
   @Binding var isPinching: Bool
 
   func makeUIView(context: Context) -> UIView {
@@ -186,40 +177,20 @@ struct ZoomGestureView: UIViewRepresentable {
       if sender.state == .began || sender.state == .changed, sender.scale > 1 {
 
         parent.isPinching = true
-
-        withAnimation(.spring()) {
-          parent.scale = sender.scale
-        }
-
-        if parent.scalePosition == .zero {
-          let scalePoint: CGPoint =  .init(
-            x: sender.location(in: sender.view).x / sender.view!.bounds.width,
-            y: sender.location(in: sender.view).y / sender.view!.bounds.height
-          )
-          parent.scalePosition = scalePoint
-        }
+        parent.scale = sender.scale
 
       } else {
 
         parent.isPinching = false
-
-        withAnimation(.spring()) {
-          parent.scale = 1
-          parent.scalePosition = .zero
-        }
+        parent.scale = 1
       }
     }
 
     @objc func hundlePan(sender: UIPanGestureRecognizer) {
       if sender.state == .began || sender.state == .changed && parent.scale > 1 {
-        withAnimation(.spring()) {
-          parent.offset = sender.translation(in: sender.view)
-        }
+        parent.offset = sender.translation(in: sender.view)
       } else {
-        withAnimation(.spring()) {
-          parent.offset = .zero
-          parent.scalePosition = .zero
-        }
+        parent.offset = .zero
       }
     }
   }
