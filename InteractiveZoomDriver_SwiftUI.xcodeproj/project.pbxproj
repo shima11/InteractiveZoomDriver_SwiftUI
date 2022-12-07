@@ -11,6 +11,7 @@
 		04ED97C2294074C400858A88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED97C1294074C400858A88 /* ContentView.swift */; };
 		04ED97C4294074C600858A88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04ED97C3294074C600858A88 /* Assets.xcassets */; };
 		04ED97C8294074C600858A88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04ED97C7294074C600858A88 /* Preview Assets.xcassets */; };
+		04ED97CF294084B300858A88 /* InteractiveZoomDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED97CE294084B300858A88 /* InteractiveZoomDriver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		04ED97C3294074C600858A88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04ED97C5294074C600858A88 /* InteractiveZoomDriver_SwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InteractiveZoomDriver_SwiftUI.entitlements; sourceTree = "<group>"; };
 		04ED97C7294074C600858A88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		04ED97CE294084B300858A88 /* InteractiveZoomDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveZoomDriver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				04ED97BF294074C400858A88 /* InteractiveZoomDriver_SwiftUIApp.swift */,
+				04ED97CE294084B300858A88 /* InteractiveZoomDriver.swift */,
 				04ED97C1294074C400858A88 /* ContentView.swift */,
 				04ED97C3294074C600858A88 /* Assets.xcassets */,
 				04ED97C5294074C600858A88 /* InteractiveZoomDriver_SwiftUI.entitlements */,
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04ED97C2294074C400858A88 /* ContentView.swift in Sources */,
+				04ED97CF294084B300858A88 /* InteractiveZoomDriver.swift in Sources */,
 				04ED97C0294074C400858A88 /* InteractiveZoomDriver_SwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
