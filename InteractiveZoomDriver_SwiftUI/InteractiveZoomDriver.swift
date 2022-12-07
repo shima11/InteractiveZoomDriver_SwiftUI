@@ -28,6 +28,7 @@ struct InteractiveZoomContainer<Content: View>: View {
       content
 
       Color.black.opacity(min((zoomScale - 1) * 0.5, 0.5))
+        .animation(.default, value: zoomScale)
         .allowsHitTesting(false)
 
       overlayView?
@@ -81,6 +82,8 @@ struct PinchZoomContext<Content: View>: View {
 
   private let content: Content
 
+  // TODO: 戻る時のVelocityも考慮してAnimationできるようにしたい
+
   @State private var originalFrame: CGRect = .zero
   @State private var localOffset: CGPoint = .zero
   @State private var scale: CGFloat = 1
@@ -107,7 +110,7 @@ struct PinchZoomContext<Content: View>: View {
     // ちらつきを防止するためにdelayを入れている
       .animation(opacity > 0 ? nil : .default.delay(0.1), value: opacity)
     // scaleのアニメーションの終了を取得して、全画面の表示の終了を判断
-      .modifier(AnimatableModifierDouble(bindedValue: scale, completion: {
+      .modifier(AnimatableCompletionModifier(bindedValue: scale, completion: {
         show = (scale > 1) || isPinching
       }))
     // Pinchが開始したら全画面表示を開始する
@@ -197,7 +200,7 @@ struct ZoomGestureView: UIViewRepresentable {
 }
 
 // withAnimationのcompletionを取得するため
-struct AnimatableModifierDouble: AnimatableModifier {
+struct AnimatableCompletionModifier: Animatable, ViewModifier {
 
   private var targetValue: Double
 

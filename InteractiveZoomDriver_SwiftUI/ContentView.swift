@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
   var body: some View {
+    // TODO: タブを切り替えるとZoomが動かなくなる
     TabView {
       NavigationView {
         ZStack {
@@ -19,31 +20,43 @@ struct ContentView: View {
 
             VStack(spacing: 40) {
 
-              Color.blue
-                .frame(width: 200, height: 100)
-
-              Color.orange
-                .frame(width: 200, height: 200)
+              Image("sample")
+                .resizable()
+                .frame(
+                  width: UIScreen.main.bounds.width * 0.8,
+                  height: UIScreen.main.bounds.width * 0.8
+                )
                 .addPinchZoom()
 
-              Color.blue
-                .frame(width: 200, height: 300)
+              Color.gray
+                .frame(
+                  width: UIScreen.main.bounds.width * 0.8,
+                  height: UIScreen.main.bounds.width * 0.8
+                )
 
-              Color.blue
-                .frame(width: 200, height: 300)
+              Color.gray
+                .frame(
+                  width: UIScreen.main.bounds.width * 0.8,
+                  height: UIScreen.main.bounds.width * 0.8
+                )
 
-              Color.blue
-                .frame(width: 200, height: 300)
+              Color.gray
+                .frame(
+                  width: UIScreen.main.bounds.width * 0.8,
+                  height: UIScreen.main.bounds.width * 0.8
+                )
 
             }
+            .padding(.vertical, 24)
           }
         }
         .navigationTitle(Text("Title"))
+        .navigationBarTitleDisplayMode(.inline)
       }
       .tabItem {
         Text("Tab1")
       }
-      Color.orange.tabItem {
+      Color.white.tabItem {
         Text("Tab2")
       }
     }
