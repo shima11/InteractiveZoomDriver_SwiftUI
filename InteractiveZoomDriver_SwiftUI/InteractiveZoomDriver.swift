@@ -13,8 +13,8 @@ struct InteractiveZoomContainer<Content: View>: View {
   @State var originalFrame: CGRect = .zero
   @State var offset: CGSize = .zero
   @State var overlayView: AnyView? = nil
-  @State var zooming: Bool = false
-  @State var pinching: Bool = false
+  @State var isZoom: Bool = false
+  @State var isPinch: Bool = false
 
   let content: Content
 
@@ -32,14 +32,14 @@ struct InteractiveZoomContainer<Content: View>: View {
         .allowsHitTesting(false)
 
       overlayView?
-        .opacity(zooming ? 1 : 0)
+        .opacity(isZoom ? 1 : 0)
         .scaleEffect(zoomScale)
         .offset(
           x: offset.width + originalFrame.midX - UIScreen.main.bounds.width/2,
           y: offset.height + originalFrame.midY - UIScreen.main.bounds.height/2
         )
-        .animation(pinching ? nil : .spring(), value: zoomScale)
-        .animation(pinching ? nil : .spring(), value: offset)
+        .animation(isPinch ? nil : .spring(), value: zoomScale)
+        .animation(isPinch ? nil : .spring(), value: offset)
         .allowsHitTesting(false)
     }
     .ignoresSafeArea()
@@ -61,34 +61,33 @@ struct InteractiveZoomContainer<Content: View>: View {
     }
     .onPreferenceChange(ZoomingPreferenceKey.self) { value in
       print("zooming:", value ?? "")
-      zooming = value ?? false
+      isZoom = value ?? false
     }
     .onPreferenceChange(PinchingPreferenceKey.self) { value in
       print("pinching:", value ?? "")
-      pinching = value ?? false
+      isPinch = value ?? false
     }
   }
 }
 
 extension View {
   func addPinchZoom() -> some View {
-    PinchZoomContext {
+    ZoomContext {
       self
     }
   }
 }
 
-struct PinchZoomContext<Content: View>: View {
+struct ZoomContext<Content: View>: View {
 
   private let content: Content
 
   // TODO: 戻る時のVelocityも考慮してAnimationできるようにしたい
 
-  @State private var originalFrame: CGRect = .zero
   @State private var localOffset: CGPoint = .zero
-  @State private var scale: CGFloat = 1
+  @State private var zoomScale: CGFloat = 1
   @State private var isPinching: Bool = false
-  @State private var show: Bool = false
+  @State private var showOverlayView: Bool = false
   @State private var overlayView: EquatableViewContainer? = nil
   @State private var opacity: CGFloat = 1
 
@@ -99,7 +98,7 @@ struct PinchZoomContext<Content: View>: View {
   var body: some View {
     content
       .overlay(
-        ZoomGestureView(scale: $scale, offset: $localOffset, isPinching: $isPinching)
+        ZoomGestureView(scale: $zoomScale, offset: $localOffset, isPinching: $isPinching)
       )
     // overlayとbackgroundの組み合わせでgeometryreaderが動かないケースがあるみたい
       .overlay(GeometryReader { proxy in
@@ -110,24 +109,24 @@ struct PinchZoomContext<Content: View>: View {
     // ちらつきを防止するためにdelayを入れている
       .animation(opacity > 0 ? nil : .default.delay(0.1), value: opacity)
     // scaleのアニメーションの終了を取得して、全画面の表示の終了を判断
-      .modifier(AnimatableCompletionModifier(bindedValue: scale, completion: {
-        show = (scale > 1) || isPinching
+      .modifier(AnimatableCompletionModifier(bindedValue: zoomScale, completion: {
+        showOverlayView = (zoomScale > 1) || isPinching
       }))
     // Pinchが開始したら全画面表示を開始する
-      .onChange(of: scale, perform: { newValue in
-        guard show == false else { return }
-        show = (newValue > 1) || isPinching
+      .onChange(of: zoomScale, perform: { newValue in
+        guard showOverlayView == false else { return }
+        showOverlayView = (newValue > 1) || isPinching
       })
     // TODO: 元に戻るためのアニメーションのCompletionを取得するためにscaleのanimationをInteractiveZoomContainerとは別で管理しているのが良くない
-      .animation(.spring(), value: scale)
-      .onChange(of: show, perform: { newValue in
+      .animation(.spring(), value: zoomScale)
+      .onChange(of: showOverlayView, perform: { newValue in
         overlayView = newValue ? .init(view: AnyView(content)) : nil
         opacity = newValue ? 0 : 1
       })
       .preference(key: OffsetPreferenceKey.self, value: .init(width: localOffset.x, height: localOffset.y))
-      .preference(key: ScalePreferenceKey.self, value: scale)
+      .preference(key: ScalePreferenceKey.self, value: zoomScale)
       .preference(key: AnyViewPreferenceKey.self, value: overlayView)
-      .preference(key: ZoomingPreferenceKey.self, value: show)
+      .preference(key: ZoomingPreferenceKey.self, value: showOverlayView)
       .preference(key: PinchingPreferenceKey.self, value: isPinching)
   }
 }
