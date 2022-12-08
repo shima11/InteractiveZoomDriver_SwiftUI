@@ -31,6 +31,8 @@ struct InteractiveZoomContainer<Content: View>: View {
         .animation(.default, value: zoomScale)
         .allowsHitTesting(false)
 
+      // TODO: 戻る時のVelocityも考慮してAnimationさせる
+
       overlayView?
         .opacity(isZoom ? 1 : 0)
         .scaleEffect(zoomScale)
@@ -82,9 +84,7 @@ struct ZoomContext<Content: View>: View {
 
   private let content: Content
 
-  // TODO: 戻る時のVelocityも考慮してAnimationできるようにしたい
-
-  @State private var localOffset: CGPoint = .zero
+  @State private var offset: CGPoint = .zero
   @State private var zoomScale: CGFloat = 1
   @State private var isPinching: Bool = false
   @State private var showOverlayView: Bool = false
@@ -98,9 +98,8 @@ struct ZoomContext<Content: View>: View {
   var body: some View {
     content
       .overlay(
-        ZoomGestureView(scale: $zoomScale, offset: $localOffset, isPinching: $isPinching)
+        ZoomGestureView(scale: $zoomScale, offset: $offset, isPinching: $isPinching)
       )
-    // overlayとbackgroundの組み合わせでgeometryreaderが動かないケースがあるみたい
       .overlay(GeometryReader { proxy in
         Color.clear
           .preference(key: FramePreferenceKey.self, value: proxy.frame(in: .global))
@@ -117,13 +116,13 @@ struct ZoomContext<Content: View>: View {
         guard showOverlayView == false else { return }
         showOverlayView = (newValue > 1) || isPinching
       })
-    // TODO: 元に戻るためのアニメーションのCompletionを取得するためにscaleのanimationをInteractiveZoomContainerとは別で管理しているのが良くない
+    // TODO: Completionを取得するためにscaleのanimationをInteractiveZoomContainerとは別で管理しているのが良くない
       .animation(.spring(), value: zoomScale)
       .onChange(of: showOverlayView, perform: { newValue in
         overlayView = newValue ? .init(view: AnyView(content)) : nil
         opacity = newValue ? 0 : 1
       })
-      .preference(key: OffsetPreferenceKey.self, value: .init(width: localOffset.x, height: localOffset.y))
+      .preference(key: OffsetPreferenceKey.self, value: .init(width: offset.x, height: offset.y))
       .preference(key: ScalePreferenceKey.self, value: zoomScale)
       .preference(key: AnyViewPreferenceKey.self, value: overlayView)
       .preference(key: ZoomingPreferenceKey.self, value: showOverlayView)
