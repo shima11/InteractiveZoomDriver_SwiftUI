@@ -200,7 +200,7 @@ struct ZoomGestureView: UIViewRepresentable {
 }
 
 // withAnimationのcompletionを取得するため
-struct AnimatableCompletionModifier: Animatable, ViewModifier {
+struct AnimatableCompletionModifier: AnimatableModifier {
 
   private var targetValue: Double
 
