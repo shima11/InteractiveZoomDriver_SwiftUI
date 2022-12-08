@@ -143,12 +143,12 @@ struct ZoomGestureView: UIViewRepresentable {
     view.backgroundColor = .clear
     let pinchGesture = UIPinchGestureRecognizer(
       target: context.coordinator,
-      action: #selector(context.coordinator.hundlePinch(sender:))
+      action: #selector(context.coordinator.hundlePinchGesture(sender:))
     )
     view.addGestureRecognizer(pinchGesture)
     let panGesture = UIPanGestureRecognizer(
       target: context.coordinator,
-      action: #selector(context.coordinator.hundlePan(sender:))
+      action: #selector(context.coordinator.hundlePanGesture(sender:))
     )
     panGesture.maximumNumberOfTouches = 2
     panGesture.delegate = context.coordinator
@@ -175,7 +175,7 @@ struct ZoomGestureView: UIViewRepresentable {
       return true
     }
 
-    @objc func hundlePinch(sender: UIPinchGestureRecognizer) {
+    @objc func hundlePinchGesture(sender: UIPinchGestureRecognizer) {
 
       if sender.state == .began || sender.state == .changed, sender.scale > 1 {
 
@@ -189,7 +189,7 @@ struct ZoomGestureView: UIViewRepresentable {
       }
     }
 
-    @objc func hundlePan(sender: UIPanGestureRecognizer) {
+    @objc func hundlePanGesture(sender: UIPanGestureRecognizer) {
       if sender.state == .began || sender.state == .changed && parent.scale > 1 {
         parent.offset = sender.translation(in: sender.view)
       } else {
