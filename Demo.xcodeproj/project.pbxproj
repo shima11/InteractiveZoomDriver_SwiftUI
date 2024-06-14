@@ -31,10 +31,10 @@
 		046771752C1C5DFE001BC85C /* InteractiveZoomDriver_SwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InteractiveZoomDriver_SwiftUI.swift; path = Sources/InteractiveZoomDriver_SwiftUI/InteractiveZoomDriver_SwiftUI.swift; sourceTree = SOURCE_ROOT; };
 		0467717C2C1C5E0E001BC85C /* InteractiveZoomDriver_SwiftUI */ = {isa = PBXFileReference; lastKnownFileType = folder; name = InteractiveZoomDriver_SwiftUI; path = Sources/InteractiveZoomDriver_SwiftUI; sourceTree = SOURCE_ROOT; };
 		04ED97BC294074C400858A88 /* InteractiveZoomDriver_SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InteractiveZoomDriver_SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		04ED97BF294074C400858A88 /* InteractiveZoomDriver_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveZoomDriver_SwiftUIApp.swift; sourceTree = "<group>"; };
-		04ED97C1294074C400858A88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		04ED97C3294074C600858A88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		04ED97C5294074C600858A88 /* InteractiveZoomDriver_SwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InteractiveZoomDriver_SwiftUI.entitlements; sourceTree = "<group>"; };
+		04ED97BF294074C400858A88 /* InteractiveZoomDriver_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InteractiveZoomDriver_SwiftUIApp.swift; path = Demo/InteractiveZoomDriver_SwiftUIApp.swift; sourceTree = "<group>"; };
+		04ED97C1294074C400858A88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = Demo/ContentView.swift; sourceTree = "<group>"; };
+		04ED97C3294074C600858A88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Demo/Assets.xcassets; sourceTree = "<group>"; };
+		04ED97C5294074C600858A88 /* InteractiveZoomDriver_SwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = InteractiveZoomDriver_SwiftUI.entitlements; path = Demo/InteractiveZoomDriver_SwiftUI.entitlements; sourceTree = "<group>"; };
 		04ED97C7294074C600858A88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,7 +53,11 @@
 		04ED97B3294074C400858A88 = {
 			isa = PBXGroup;
 			children = (
-				04ED97BE294074C400858A88 /* InteractiveZoomDriver_SwiftUI */,
+				04ED97BF294074C400858A88 /* InteractiveZoomDriver_SwiftUIApp.swift */,
+				04ED97C1294074C400858A88 /* ContentView.swift */,
+				04ED97C3294074C600858A88 /* Assets.xcassets */,
+				04ED97C5294074C600858A88 /* InteractiveZoomDriver_SwiftUI.entitlements */,
+				04ED97C6294074C600858A88 /* Preview Content */,
 				04ED97BD294074C400858A88 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,18 +68,6 @@
 				04ED97BC294074C400858A88 /* InteractiveZoomDriver_SwiftUI.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		04ED97BE294074C400858A88 /* InteractiveZoomDriver_SwiftUI */ = {
-			isa = PBXGroup;
-			children = (
-				04ED97BF294074C400858A88 /* InteractiveZoomDriver_SwiftUIApp.swift */,
-				04ED97C1294074C400858A88 /* ContentView.swift */,
-				04ED97C3294074C600858A88 /* Assets.xcassets */,
-				04ED97C5294074C600858A88 /* InteractiveZoomDriver_SwiftUI.entitlements */,
-				04ED97C6294074C600858A88 /* Preview Content */,
-			);
-			path = InteractiveZoomDriver_SwiftUI;
 			sourceTree = "<group>";
 		};
 		04ED97C6294074C600858A88 /* Preview Content */ = {
@@ -91,7 +83,8 @@
 				0467716F2C1C5DFE001BC85C /* Preview Content */,
 				04ED97C7294074C600858A88 /* Preview Assets.xcassets */,
 			);
-			path = "Preview Content";
+			name = "Preview Content";
+			path = "Demo/Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,7 +125,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 04ED97B7294074C400858A88 /* Build configuration list for PBXProject "InteractiveZoomDriver_SwiftUI" */;
+			buildConfigurationList = 04ED97B7294074C400858A88 /* Build configuration list for PBXProject "Demo" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -373,7 +366,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		04ED97B7294074C400858A88 /* Build configuration list for PBXProject "InteractiveZoomDriver_SwiftUI" */ = {
+		04ED97B7294074C400858A88 /* Build configuration list for PBXProject "Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04ED97C9294074C600858A88 /* Debug */,

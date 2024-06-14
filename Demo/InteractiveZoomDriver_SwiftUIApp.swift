@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import InteractiveZoomDriver_SwiftUI
 
 @main
 struct InteractiveZoomDriver_SwiftUIApp: App {
