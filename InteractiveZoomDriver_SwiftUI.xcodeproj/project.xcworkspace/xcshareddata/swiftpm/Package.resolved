@@ -1,0 +1,15 @@
+{
+  "originHash" : "91ba2f6c38856f7137fa7ebe464d66109651390c16d9b80eba5565f9d0f57213",
+  "pins" : [
+    {
+      "identity" : "interactivezoomdriver_swiftui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/shima11/InteractiveZoomDriver_SwiftUI",
+      "state" : {
+        "branch" : "main",
+        "revision" : "8edd866bf89445d74a203dedcd674236f6e5f606"
+      }
+    }
+  ],
+  "version" : 3
+}
