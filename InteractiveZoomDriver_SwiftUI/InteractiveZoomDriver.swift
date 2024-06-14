@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct InteractiveZoomContainer<Content: View>: View {
+public struct InteractiveZoomContainer<Content: View>: View {
 
   @State var zoomScale: CGFloat = 1
   @State var originalFrame: CGRect = .zero
@@ -18,11 +18,11 @@ struct InteractiveZoomContainer<Content: View>: View {
 
   let content: Content
 
-  init(@ViewBuilder content: () -> Content) {
+  public init(@ViewBuilder content: () -> Content) {
     self.content = content()
   }
 
-  var body: some View {
+  public var body: some View {
     ZStack {
 
       content
@@ -73,7 +73,7 @@ struct InteractiveZoomContainer<Content: View>: View {
 }
 
 extension View {
-  func addPinchZoom() -> some View {
+  public func addPinchZoom() -> some View {
     ZoomContext {
       self
     }
