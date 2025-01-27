@@ -9,7 +9,7 @@ import SwiftUI
 import InteractiveZoomDriver_SwiftUI
 
 @main
-struct InteractiveZoomDriver_SwiftUIApp: App {
+struct DemoIApp: App {
 
   var body: some Scene {
     WindowGroup {

@@ -3,185 +3,142 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		046771762C1C5DFE001BC85C /* Preview Content in Resources */ = {isa = PBXBuildFile; fileRef = 0467716F2C1C5DFE001BC85C /* Preview Content */; };
-		046771772C1C5DFE001BC85C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046771702C1C5DFE001BC85C /* ContentView.swift */; };
-		046771782C1C5DFE001BC85C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 046771712C1C5DFE001BC85C /* Assets.xcassets */; };
-		046771792C1C5DFE001BC85C /* InteractiveZoomDriver_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046771722C1C5DFE001BC85C /* InteractiveZoomDriver_SwiftUIApp.swift */; };
-		0467717A2C1C5DFE001BC85C /* InteractiveZoomDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046771732C1C5DFE001BC85C /* InteractiveZoomDriver.swift */; };
-		0467717B2C1C5DFF001BC85C /* InteractiveZoomDriver_SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046771752C1C5DFE001BC85C /* InteractiveZoomDriver_SwiftUI.swift */; };
-		0467717D2C1C5E0E001BC85C /* InteractiveZoomDriver_SwiftUI in Resources */ = {isa = PBXBuildFile; fileRef = 0467717C2C1C5E0E001BC85C /* InteractiveZoomDriver_SwiftUI */; };
-		046771802C1C5F05001BC85C /* InteractiveZoomDriver_SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0467717F2C1C5F05001BC85C /* InteractiveZoomDriver_SwiftUI */; };
-		04ED97C0294074C400858A88 /* InteractiveZoomDriver_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED97BF294074C400858A88 /* InteractiveZoomDriver_SwiftUIApp.swift */; };
-		04ED97C2294074C400858A88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED97C1294074C400858A88 /* ContentView.swift */; };
-		04ED97C4294074C600858A88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04ED97C3294074C600858A88 /* Assets.xcassets */; };
-		04ED97C8294074C600858A88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04ED97C7294074C600858A88 /* Preview Assets.xcassets */; };
+		042F5CF42D475FB7003F33C4 /* InteractiveZoomDriver_SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 042F5CF32D475FB7003F33C4 /* InteractiveZoomDriver_SwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0467716F2C1C5DFE001BC85C /* Preview Content */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Preview Content"; path = "Sources/InteractiveZoomDriver_SwiftUI/Preview Content"; sourceTree = SOURCE_ROOT; };
-		046771702C1C5DFE001BC85C /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = Sources/InteractiveZoomDriver_SwiftUI/ContentView.swift; sourceTree = SOURCE_ROOT; };
-		046771712C1C5DFE001BC85C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Sources/InteractiveZoomDriver_SwiftUI/Assets.xcassets; sourceTree = SOURCE_ROOT; };
-		046771722C1C5DFE001BC85C /* InteractiveZoomDriver_SwiftUIApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InteractiveZoomDriver_SwiftUIApp.swift; path = Sources/InteractiveZoomDriver_SwiftUI/InteractiveZoomDriver_SwiftUIApp.swift; sourceTree = SOURCE_ROOT; };
-		046771732C1C5DFE001BC85C /* InteractiveZoomDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InteractiveZoomDriver.swift; path = Sources/InteractiveZoomDriver_SwiftUI/InteractiveZoomDriver.swift; sourceTree = SOURCE_ROOT; };
-		046771742C1C5DFE001BC85C /* InteractiveZoomDriver_SwiftUI.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = InteractiveZoomDriver_SwiftUI.entitlements; path = Sources/InteractiveZoomDriver_SwiftUI/InteractiveZoomDriver_SwiftUI.entitlements; sourceTree = SOURCE_ROOT; };
-		046771752C1C5DFE001BC85C /* InteractiveZoomDriver_SwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InteractiveZoomDriver_SwiftUI.swift; path = Sources/InteractiveZoomDriver_SwiftUI/InteractiveZoomDriver_SwiftUI.swift; sourceTree = SOURCE_ROOT; };
-		0467717C2C1C5E0E001BC85C /* InteractiveZoomDriver_SwiftUI */ = {isa = PBXFileReference; lastKnownFileType = folder; name = InteractiveZoomDriver_SwiftUI; path = Sources/InteractiveZoomDriver_SwiftUI; sourceTree = SOURCE_ROOT; };
-		04ED97BC294074C400858A88 /* InteractiveZoomDriver_SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InteractiveZoomDriver_SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		04ED97BF294074C400858A88 /* InteractiveZoomDriver_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InteractiveZoomDriver_SwiftUIApp.swift; path = Demo/InteractiveZoomDriver_SwiftUIApp.swift; sourceTree = "<group>"; };
-		04ED97C1294074C400858A88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = Demo/ContentView.swift; sourceTree = "<group>"; };
-		04ED97C3294074C600858A88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Demo/Assets.xcassets; sourceTree = "<group>"; };
-		04ED97C5294074C600858A88 /* InteractiveZoomDriver_SwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = InteractiveZoomDriver_SwiftUI.entitlements; path = Demo/InteractiveZoomDriver_SwiftUI.entitlements; sourceTree = "<group>"; };
-		04ED97C7294074C600858A88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		042F5CDD2D475F5C003F33C4 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		042F5CDF2D475F5C003F33C4 /* Demo */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Demo;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
-		04ED97B9294074C400858A88 /* Frameworks */ = {
+		042F5CDA2D475F5C003F33C4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				046771802C1C5F05001BC85C /* InteractiveZoomDriver_SwiftUI in Frameworks */,
+				042F5CF42D475FB7003F33C4 /* InteractiveZoomDriver_SwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04ED97B3294074C400858A88 = {
+		042F5CD42D475F5C003F33C4 = {
 			isa = PBXGroup;
 			children = (
-				04ED97BF294074C400858A88 /* InteractiveZoomDriver_SwiftUIApp.swift */,
-				04ED97C1294074C400858A88 /* ContentView.swift */,
-				04ED97C3294074C600858A88 /* Assets.xcassets */,
-				04ED97C5294074C600858A88 /* InteractiveZoomDriver_SwiftUI.entitlements */,
-				04ED97C6294074C600858A88 /* Preview Content */,
-				04ED97BD294074C400858A88 /* Products */,
+				042F5CDF2D475F5C003F33C4 /* Demo */,
+				042F5CDE2D475F5C003F33C4 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		04ED97BD294074C400858A88 /* Products */ = {
+		042F5CDE2D475F5C003F33C4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				04ED97BC294074C400858A88 /* InteractiveZoomDriver_SwiftUI.app */,
+				042F5CDD2D475F5C003F33C4 /* Demo.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		04ED97C6294074C600858A88 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				0467717C2C1C5E0E001BC85C /* InteractiveZoomDriver_SwiftUI */,
-				046771712C1C5DFE001BC85C /* Assets.xcassets */,
-				046771702C1C5DFE001BC85C /* ContentView.swift */,
-				046771742C1C5DFE001BC85C /* InteractiveZoomDriver_SwiftUI.entitlements */,
-				046771752C1C5DFE001BC85C /* InteractiveZoomDriver_SwiftUI.swift */,
-				046771722C1C5DFE001BC85C /* InteractiveZoomDriver_SwiftUIApp.swift */,
-				046771732C1C5DFE001BC85C /* InteractiveZoomDriver.swift */,
-				0467716F2C1C5DFE001BC85C /* Preview Content */,
-				04ED97C7294074C600858A88 /* Preview Assets.xcassets */,
-			);
-			name = "Preview Content";
-			path = "Demo/Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		04ED97BB294074C400858A88 /* InteractiveZoomDriver_SwiftUI */ = {
+		042F5CDC2D475F5C003F33C4 /* Demo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04ED97CB294074C600858A88 /* Build configuration list for PBXNativeTarget "InteractiveZoomDriver_SwiftUI" */;
+			buildConfigurationList = 042F5CEB2D475F5D003F33C4 /* Build configuration list for PBXNativeTarget "Demo" */;
 			buildPhases = (
-				04ED97B8294074C400858A88 /* Sources */,
-				04ED97B9294074C400858A88 /* Frameworks */,
-				04ED97BA294074C400858A88 /* Resources */,
+				042F5CD92D475F5C003F33C4 /* Sources */,
+				042F5CDA2D475F5C003F33C4 /* Frameworks */,
+				042F5CDB2D475F5C003F33C4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = InteractiveZoomDriver_SwiftUI;
-			packageProductDependencies = (
-				0467717F2C1C5F05001BC85C /* InteractiveZoomDriver_SwiftUI */,
+			fileSystemSynchronizedGroups = (
+				042F5CDF2D475F5C003F33C4 /* Demo */,
 			);
-			productName = InteractiveZoomDriver_SwiftUI;
-			productReference = 04ED97BC294074C400858A88 /* InteractiveZoomDriver_SwiftUI.app */;
+			name = Demo;
+			packageProductDependencies = (
+				042F5CF32D475FB7003F33C4 /* InteractiveZoomDriver_SwiftUI */,
+			);
+			productName = Demo;
+			productReference = 042F5CDD2D475F5C003F33C4 /* Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		04ED97B4294074C400858A88 /* Project object */ = {
+		042F5CD52D475F5C003F33C4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1400;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
-					04ED97BB294074C400858A88 = {
-						CreatedOnToolsVersion = 14.0.1;
+					042F5CDC2D475F5C003F33C4 = {
+						CreatedOnToolsVersion = 16.0;
 					};
 				};
 			};
-			buildConfigurationList = 04ED97B7294074C400858A88 /* Build configuration list for PBXProject "Demo" */;
-			compatibilityVersion = "Xcode 14.0";
+			buildConfigurationList = 042F5CD82D475F5C003F33C4 /* Build configuration list for PBXProject "Demo" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 04ED97B3294074C400858A88;
+			mainGroup = 042F5CD42D475F5C003F33C4;
+			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				0467717E2C1C5F05001BC85C /* XCRemoteSwiftPackageReference "InteractiveZoomDriver_SwiftUI" */,
+				042F5CF22D475FB7003F33C4 /* XCRemoteSwiftPackageReference "InteractiveZoomDriver_SwiftUI" */,
 			);
-			productRefGroup = 04ED97BD294074C400858A88 /* Products */;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 042F5CDE2D475F5C003F33C4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				04ED97BB294074C400858A88 /* InteractiveZoomDriver_SwiftUI */,
+				042F5CDC2D475F5C003F33C4 /* Demo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		04ED97BA294074C400858A88 /* Resources */ = {
+		042F5CDB2D475F5C003F33C4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				046771762C1C5DFE001BC85C /* Preview Content in Resources */,
-				04ED97C8294074C600858A88 /* Preview Assets.xcassets in Resources */,
-				0467717D2C1C5E0E001BC85C /* InteractiveZoomDriver_SwiftUI in Resources */,
-				046771782C1C5DFE001BC85C /* Assets.xcassets in Resources */,
-				04ED97C4294074C600858A88 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		04ED97B8294074C400858A88 /* Sources */ = {
+		042F5CD92D475F5C003F33C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04ED97C2294074C400858A88 /* ContentView.swift in Sources */,
-				0467717A2C1C5DFE001BC85C /* InteractiveZoomDriver.swift in Sources */,
-				0467717B2C1C5DFF001BC85C /* InteractiveZoomDriver_SwiftUI.swift in Sources */,
-				046771772C1C5DFE001BC85C /* ContentView.swift in Sources */,
-				046771792C1C5DFE001BC85C /* InteractiveZoomDriver_SwiftUIApp.swift in Sources */,
-				04ED97C0294074C400858A88 /* InteractiveZoomDriver_SwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		04ED97C9294074C600858A88 /* Debug */ = {
+		042F5CE92D475F5D003F33C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -214,7 +171,8 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -228,18 +186,22 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		04ED97CA294074C600858A88 /* Release */ = {
+		042F5CEA2D475F5D003F33C4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -272,7 +234,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -280,83 +243,68 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		04ED97CC294074C600858A88 /* Debug */ = {
+		042F5CEC2D475F5D003F33C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = InteractiveZoomDriver_SwiftUI/InteractiveZoomDriver_SwiftUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"InteractiveZoomDriver_SwiftUI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Demo/Preview Content\"";
 				DEVELOPMENT_TEAM = 64T4PJ8WCZ;
-				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.eure.pairs.InteractiveZoomDriver-SwiftUI";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shima.apps.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		04ED97CD294074C600858A88 /* Release */ = {
+		042F5CED2D475F5D003F33C4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = InteractiveZoomDriver_SwiftUI/InteractiveZoomDriver_SwiftUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"InteractiveZoomDriver_SwiftUI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Demo/Preview Content\"";
 				DEVELOPMENT_TEAM = 64T4PJ8WCZ;
-				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.eure.pairs.InteractiveZoomDriver-SwiftUI";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shima.apps.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -366,20 +314,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		04ED97B7294074C400858A88 /* Build configuration list for PBXProject "Demo" */ = {
+		042F5CD82D475F5C003F33C4 /* Build configuration list for PBXProject "Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				04ED97C9294074C600858A88 /* Debug */,
-				04ED97CA294074C600858A88 /* Release */,
+				042F5CE92D475F5D003F33C4 /* Debug */,
+				042F5CEA2D475F5D003F33C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04ED97CB294074C600858A88 /* Build configuration list for PBXNativeTarget "InteractiveZoomDriver_SwiftUI" */ = {
+		042F5CEB2D475F5D003F33C4 /* Build configuration list for PBXNativeTarget "Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				04ED97CC294074C600858A88 /* Debug */,
-				04ED97CD294074C600858A88 /* Release */,
+				042F5CEC2D475F5D003F33C4 /* Debug */,
+				042F5CED2D475F5D003F33C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -387,7 +335,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0467717E2C1C5F05001BC85C /* XCRemoteSwiftPackageReference "InteractiveZoomDriver_SwiftUI" */ = {
+		042F5CF22D475FB7003F33C4 /* XCRemoteSwiftPackageReference "InteractiveZoomDriver_SwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/shima11/InteractiveZoomDriver_SwiftUI";
 			requirement = {
@@ -398,12 +346,12 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0467717F2C1C5F05001BC85C /* InteractiveZoomDriver_SwiftUI */ = {
+		042F5CF32D475FB7003F33C4 /* InteractiveZoomDriver_SwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0467717E2C1C5F05001BC85C /* XCRemoteSwiftPackageReference "InteractiveZoomDriver_SwiftUI" */;
+			package = 042F5CF22D475FB7003F33C4 /* XCRemoteSwiftPackageReference "InteractiveZoomDriver_SwiftUI" */;
 			productName = InteractiveZoomDriver_SwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 04ED97B4294074C400858A88 /* Project object */;
+	rootObject = 042F5CD52D475F5C003F33C4 /* Project object */;
 }
