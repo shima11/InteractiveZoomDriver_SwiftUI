@@ -15,6 +15,7 @@ public struct InteractiveZoomModifier: ViewModifier {
 
   public func body(content: Content) -> some View {
     content
+      .zIndex(Double.greatestFiniteMagnitude)
       .overlay(ZoomGestureView(scale: $currentScale, offset: $currentOffset, isPinching: $isPinching))
       .scaleEffect(currentScale)
       .offset(currentOffset)
@@ -103,7 +104,22 @@ extension View {
 }
 
 #Preview(body: {
-  Color.red
-    .frame(width: 100, height: 100)
-    .addInteractiveZoom()
+  NavigationView {
+    VStack {
+      Color.gray
+        .frame(width: 100, height: 100)
+
+      Color.red
+        .frame(width: 100, height: 100)
+        .addInteractiveZoom()
+
+      Color.gray
+        .frame(width: 100, height: 100)
+
+    }
+    // TODO: 外部の影響を受ける
+//    .clipped()
+    .navigationTitle(Text("Title"))
+    .navigationBarTitleDisplayMode(.inline)
+  }
 })
