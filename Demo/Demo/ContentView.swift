@@ -10,8 +10,8 @@ import InteractiveZoomDriver_SwiftUI
 
 struct ContentView: View {
   var body: some View {
-    // TODO: タブを切り替えるとZoomが動かなくなる
     TabView {
+
       NavigationView {
         ZStack {
 
@@ -23,30 +23,16 @@ struct ContentView: View {
 
               Image("sample")
                 .resizable()
-                .frame(
-                  width: UIScreen.main.bounds.width * 0.8,
-                  height: UIScreen.main.bounds.width * 0.8
-                )
-//                .modifier(InteractiveZoomModifier())
+                .scaledToFit()
+                .frame(height: 400)
+                .padding(24)
                 .addInteractiveZoom()
 
               Color.gray
-                .frame(
-                  width: UIScreen.main.bounds.width * 0.8,
-                  height: UIScreen.main.bounds.width * 0.8
-                )
+                .frame(width: 300, height: 300)
 
               Color.gray
-                .frame(
-                  width: UIScreen.main.bounds.width * 0.8,
-                  height: UIScreen.main.bounds.width * 0.8
-                )
-
-              Color.gray
-                .frame(
-                  width: UIScreen.main.bounds.width * 0.8,
-                  height: UIScreen.main.bounds.width * 0.8
-                )
+                .frame(width: 300, height: 300)
 
             }
             .padding(.vertical, 24)
@@ -58,9 +44,11 @@ struct ContentView: View {
       .tabItem {
         Text("Tab1")
       }
+
       Color.white.tabItem {
         Text("Tab2")
       }
+
     }
   }
 }

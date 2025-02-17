@@ -6,16 +6,13 @@
 //
 
 import SwiftUI
-import InteractiveZoomDriver_SwiftUI
 
 @main
 struct DemoIApp: App {
 
   var body: some Scene {
     WindowGroup {
-      InteractiveZoomContainer {
-        ContentView()
-      }
+      ContentView()
     }
   }
 }
