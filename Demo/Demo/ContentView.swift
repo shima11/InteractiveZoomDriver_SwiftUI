@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import InteractiveZoomDriver_SwiftUI
 
 struct ContentView: View {
   var body: some View {
@@ -26,7 +27,8 @@ struct ContentView: View {
                   width: UIScreen.main.bounds.width * 0.8,
                   height: UIScreen.main.bounds.width * 0.8
                 )
-                .addPinchZoom()
+//                .modifier(InteractiveZoomModifier())
+                .addInteractiveZoom()
 
               Color.gray
                 .frame(

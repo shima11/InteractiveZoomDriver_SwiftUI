@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct InteractiveZoomContainer<Content: View>: View {
+struct InteractiveZoomContainer<Content: View>: View {
 
   @State var zoomScale: CGFloat = 1
   @State var originalFrame: CGRect = .zero
@@ -18,11 +18,11 @@ public struct InteractiveZoomContainer<Content: View>: View {
 
   let content: Content
 
-  public init(@ViewBuilder content: () -> Content) {
+  init(@ViewBuilder content: () -> Content) {
     self.content = content()
   }
 
-  public var body: some View {
+  var body: some View {
     ZStack {
 
       content
@@ -73,7 +73,7 @@ public struct InteractiveZoomContainer<Content: View>: View {
 }
 
 extension View {
-  public func addPinchZoom() -> some View {
+  func addPinchZoom() -> some View {
     ZoomContext {
       self
     }
@@ -84,7 +84,7 @@ struct ZoomContext<Content: View>: View {
 
   private let content: Content
 
-  @State private var offset: CGPoint = .zero
+  @State private var offset: CGSize = .zero
   @State private var zoomScale: CGFloat = 1
   @State private var isPinching: Bool = false
   @State private var showOverlayView: Bool = false
@@ -122,78 +122,11 @@ struct ZoomContext<Content: View>: View {
         overlayView = newValue ? .init(view: AnyView(content)) : nil
         opacity = newValue ? 0 : 1
       })
-      .preference(key: OffsetPreferenceKey.self, value: .init(width: offset.x, height: offset.y))
+      .preference(key: OffsetPreferenceKey.self, value: offset)
       .preference(key: ScalePreferenceKey.self, value: zoomScale)
       .preference(key: AnyViewPreferenceKey.self, value: overlayView)
       .preference(key: ZoomingPreferenceKey.self, value: showOverlayView)
       .preference(key: PinchingPreferenceKey.self, value: isPinching)
-  }
-}
-
-struct ZoomGestureView: UIViewRepresentable {
-
-  @Binding var scale: CGFloat
-  @Binding var offset: CGPoint
-  @Binding var isPinching: Bool
-
-  func makeUIView(context: Context) -> UIView {
-    let view = UIView()
-    view.backgroundColor = .clear
-    let pinchGesture = UIPinchGestureRecognizer(
-      target: context.coordinator,
-      action: #selector(context.coordinator.hundlePinchGesture(sender:))
-    )
-    view.addGestureRecognizer(pinchGesture)
-    let panGesture = UIPanGestureRecognizer(
-      target: context.coordinator,
-      action: #selector(context.coordinator.hundlePanGesture(sender:))
-    )
-    panGesture.maximumNumberOfTouches = 2
-    panGesture.delegate = context.coordinator
-    view.addGestureRecognizer(panGesture)
-    return view
-  }
-
-  func updateUIView(_ uiView: UIViewType, context: Context) {
-  }
-
-  func makeCoordinator() -> Coordinator {
-    Coordinator(parent: self)
-  }
-
-  final class Coordinator: NSObject, UIGestureRecognizerDelegate {
-
-    private var parent: ZoomGestureView
-
-    init(parent: ZoomGestureView) {
-      self.parent = parent
-    }
-
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-      return true
-    }
-
-    @objc func hundlePinchGesture(sender: UIPinchGestureRecognizer) {
-
-      if sender.state == .began || sender.state == .changed, sender.scale > 1 {
-
-        parent.isPinching = true
-        parent.scale = sender.scale
-
-      } else {
-
-        parent.isPinching = false
-        parent.scale = 1
-      }
-    }
-
-    @objc func hundlePanGesture(sender: UIPanGestureRecognizer) {
-      if sender.state == .began || sender.state == .changed && parent.scale > 1 {
-        parent.offset = sender.translation(in: sender.view)
-      } else {
-        parent.offset = .zero
-      }
-    }
   }
 }
 
