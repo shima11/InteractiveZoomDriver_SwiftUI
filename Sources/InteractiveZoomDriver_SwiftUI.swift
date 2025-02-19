@@ -96,29 +96,86 @@ struct ZoomGestureView: UIViewRepresentable {
   }
 }
 
-
 extension View {
   public func addInteractiveZoom() -> some View {
     self.modifier(InteractiveZoomModifier())
   }
 }
 
+import UIKit
+
+struct FullScreenOverlay<Content: View>: UIViewRepresentable {
+
+  let content: Content
+
+  func makeCoordinator() -> Coordinator {
+    Coordinator()
+  }
+
+  func makeUIView(context: Context) -> UIView {
+    let container = UIView(frame: .zero)
+    container.backgroundColor = .clear
+    container.isUserInteractionEnabled = false
+    context.coordinator.setupHostingController(with: content)
+
+    return container
+  }
+
+  func updateUIView(_ uiView: UIView, context: Context) {
+    context.coordinator.hostingController?.rootView = content
+  }
+
+  func dismantleUIView(_ uiView: UIView, coordinator: Coordinator) {
+    DispatchQueue.main.async {
+      coordinator.hostingController?.view.removeFromSuperview()
+    }
+  }
+
+  class Coordinator {
+    var hostingController: UIHostingController<Content>?
+
+    func setupHostingController(with content: Content) {
+
+      hostingController = UIHostingController(rootView: content)
+      hostingController?.view.backgroundColor = .clear
+
+      DispatchQueue.main.async {
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = windowScene.windows.first {
+          self.hostingController?.view.frame = window.bounds
+          self.hostingController?.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+          window.addSubview(self.hostingController!.view)
+        }
+      }
+    }
+  }
+}
+
+
 #Preview(body: {
   NavigationView {
-    VStack {
-      Color.gray
-        .frame(width: 100, height: 100)
+    ScrollView {
+      VStack {
 
-      Color.red
-        .frame(width: 100, height: 100)
-        .addInteractiveZoom()
+        Color.red
+          .frame(width: 100, height: 100)
+          .addInteractiveZoom()
 
-      Color.gray
-        .frame(width: 100, height: 100)
+        FullScreenOverlay(
+          content:
+            Color.green
+            .frame(width: 100, height: 100)
+            .addInteractiveZoom()
+        )
+        .background(Color.black.opacity(0.1))
 
+        Color.gray
+          .frame(width: 100, height: 100)
+
+      }
     }
     // TODO: 外部の影響を受ける
-//    .clipped()
+    .clipped()
     .navigationTitle(Text("Title"))
     .navigationBarTitleDisplayMode(.inline)
   }
